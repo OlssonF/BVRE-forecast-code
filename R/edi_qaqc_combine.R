@@ -1,7 +1,7 @@
 qaqc_edi_combine <- function(realtime_file,
                              qaqc_file,
                              config,
-                             input_file_tz){
+                             offset_file){
   
   
   # realtime_file = L1 FILE STORED ON GITHUB
