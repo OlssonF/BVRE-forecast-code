@@ -1,24 +1,25 @@
-qaqc_edi_combine <- function(realtime_file,
+wq_realtime_edi_combine <- function(realtime_file,
                              qaqc_file,
-                             config,
+                             config_file,
                              offset_file){
   
   
   # realtime_file = L1 FILE STORED ON GITHUB
   # qaqc_file = EXISTING FILE STORED ON EDI
-  realtime_file_exists <- TRUE
-  edi_exists <- TRUE
-  
-  #if(!is.na(realtime_file)){
-  if(realtime_file_exists == TRUE){
+  library(yaml)
+  config <- read_yaml(config_file)
+
+  if(!is.na(realtime_file)){
+  #if(realtime_file_exists == TRUE){
     #Different lakes are going to have to modify this for their temperature data format
     
-    d1 <- realtime_file
+    d1 <- read.csv(realtime_file, na.strings = 'NA', stringsAsFactors = FALSE)
+    #d1 <- realtime_file
     
-    #if(!is.na(qaqc_file)){
-    if(edi_exists == TRUE){
-      #d2 <- read.csv(qaqc_file, na.strings = 'NA', stringsAsFactors = FALSE)
-      d2 <- qaqc_file
+    if(!is.na(qaqc_file)){
+    #if(edi_exists == TRUE){
+      d2 <- read.csv(qaqc_file, na.strings = 'NA', stringsAsFactors = FALSE)
+      #d2 <- qaqc_file
       
       #subset d1 to only dates in d2
       #d1 <- d1_og[d1_og$DateTime %in% d2$DateTime,]
@@ -42,8 +43,8 @@ qaqc_edi_combine <- function(realtime_file,
                       fDOM_1_5 = d1$EXOfDOM_QSU_1.5, bgapc_1_5 = d1$EXOBGAPC_ugL_1.5,
                       depth_1_5 = d1$EXODepth_m, Depth_m_13=d1$Depth_m_13)
     
-    #if(!is.na(qaqc_file)){
-    if(edi_exists == TRUE){
+    if(!is.na(qaqc_file)){
+    #if(edi_exists == TRUE){
       TIMESTAMP_in <- as_datetime(d1$DateTime,tz = "EST")
       d1$TIMESTAMP <- with_tz(TIMESTAMP_in,tz = "UTC")
       
