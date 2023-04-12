@@ -1,13 +1,13 @@
 wq_realtime_edi_combine <- function(realtime_file,
                              qaqc_file,
-                             config_file,
+                             config,
                              offset_file){
   
   
   # realtime_file = L1 FILE STORED ON GITHUB
   # qaqc_file = EXISTING FILE STORED ON EDI
-  library(yaml)
-  config <- read_yaml(config_file)
+  #library(yaml)
+  #config <- read_yaml(config_file)
 
   if(!is.na(realtime_file)){
   #if(realtime_file_exists == TRUE){
@@ -221,7 +221,9 @@ wq_realtime_edi_combine <- function(realtime_file,
   
   ######################################################################################
   #now read in the offset file and calculate depth for each sensor/position
-  offsets <- readr::read_csv(offset_file) %>% dplyr::select(-c(Reservoir,Site))
+  offsets <- readr::read_csv(offset_file, show_col_types = FALSE) %>% 
+    dplyr::select(-Reservoir,-Site)
+    #dplyr::select(-c(Reservoir,Site))
   
   #make depth numeric so it matches offset position col
   d$depth <- as.numeric(d$depth)
