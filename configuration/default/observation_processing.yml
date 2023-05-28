@@ -55,7 +55,7 @@ depths_bins_top: [0.00, 0.50, 1.00,
 
 obs_config_file: field_gases.csv
 
-realtime_insitu_location: bvre-platform-data
+realtime_insitu_location: bvre-platform-data-qaqc
 realtime_met_station_location: fcre-metstation-data
 manual_data_location: BVR-GLM/inputs
 #realtime_inflow_data_location: diana-data
