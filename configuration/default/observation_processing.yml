@@ -55,7 +55,7 @@ depths_bins_top: [0.00, 0.50, 1.00,
 
 obs_config_file: field_gases.csv
 
-realtime_insitu_location: bvre-platform-data
+realtime_insitu_location: bvre-platform-data-qaqc
 realtime_met_station_location: fcre-metstation-data
 manual_data_location: BVR-GLM/inputs
 #realtime_inflow_data_location: diana-data
@@ -64,7 +64,7 @@ specified_inflow1: BVR_inflow_2014_2019_20200917_allfractions_2poolsDOC_withch4_
 specified_outflow1: BVR_spillway_outflow_2014_2019_20200917_nldasInflow.csv
 
 insitu_obs_fname: 
-    - bvre-platform-data/bvre-waterquality_L1.csv
+    - bvre-platform-data-qaqc/bvre-waterquality_L1.csv
     - BVR_platform_data_2020_2022.csv
     - BVR_Depth_offsets_2020_2022.csv
 
@@ -81,7 +81,7 @@ ctd_2_exo_sensor_chla: [0, 1]  #c(-2.0430, 2.5314) #c(-1.582, 1.335)
 ctd_2_exo_sensor_do: [0, 1] #c(-10.770, 1.061)
 exo_sensor_2_grab_sample_fdom: [-38.95, 22.47]
 focal_depths: .na
-maintenance_file: bvre-platform-data/BVR_maintenance_log.txt
+maintenance_file: bvre-platform-data-qaqc/BVR_maintenance_log.txt
 
 pull_from_git: TRUE
 
