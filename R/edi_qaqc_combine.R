@@ -41,7 +41,7 @@ wq_realtime_edi_combine <- function(realtime_file,
                       Chla_1_5 = d1$EXOChla_ugL_1.5, doobs_1_5 = d1$EXODO_mgL_1.5,
                       doobs_6 = d1$RDO_mgL_6, doobs_13 = d1$RDO_mgL_13,
                       fDOM_1_5 = d1$EXOfDOM_QSU_1.5, bgapc_1_5 = d1$EXOBGAPC_ugL_1.5,
-                      depth_1_5 = d1$EXODepth_m, Depth_m_13=d1$Depth_m_13)
+                      depth_1_5 = d1$EXODepth_m, Depth_m_13=d1$LvlDepth_m_13)
     
     if(!is.na(qaqc_file)){
     #if(edi_exists == TRUE){
@@ -91,7 +91,7 @@ wq_realtime_edi_combine <- function(realtime_file,
                      Chla_1_5 = d1$EXOChla_ugL_1.5, doobs_1_5 = d1$EXODO_mgL_1.5,
                      doobs_6 = d1$RDO_mgL_6, doobs_13 = d1$RDO_mgL_13,
                      fDOM_1_5 = d1$EXOfDOM_QSU_1.5, bgapc_1_5 = d1$EXOBGAPC_ugL_1.5,
-                     depth_1_5 = d1$EXODepth_m, Depth_m_13=d1$Depth_m_13)
+                     depth_1_5 = d1$EXODepth_m, Depth_m_13=d1$LvlDepth_m_13)
   }
   
   
